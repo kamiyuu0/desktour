@@ -24,9 +24,8 @@
     <% else %>
       <%= render 'shared/header' %>
     <% end %>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+    <%= render 'shared/flash_messages'%>
+    <%= yield %>
     <%= render 'shared/footer' %>
   </body>
 </html>

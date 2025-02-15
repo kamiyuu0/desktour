@@ -1,10 +1,8 @@
-<%= link_to root_path, class: "navbar-brand" do %>
-      トップページへ
-<% end %>
-
-<button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-    <span class="navbar-toggler-icon"></span>
-</button>
-
-
-<%= link_to 'ログアウト', logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
+<header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+    <div class="flex items-center space-x-6">
+        <%= link_to 'DESK TOUR', root_path, class: "text-lg font-bold text-gray-800 hover:text-blue-500 transition" %>
+    </div>
+    <div class="flex items-center space-x-4">
+        <%= link_to 'ログアウト', logout_path, class: "text-gray-600 hover:text-blue-500 transition", data: { turbo_method: :delete }  %>
+    </div>
+</header>
