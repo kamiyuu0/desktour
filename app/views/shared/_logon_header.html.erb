@@ -3,6 +3,8 @@
         <%= link_to 'DESK TOUR', root_path, class: "text-lg font-bold text-gray-800 hover:text-blue-500 transition" %>
     </div>
     <div class="flex items-center space-x-4">
+        <%= link_to 'デスク一覧', desks_path, class: "text-gray-600 hover:text-blue-500 transition" %>
+        <%= link_to 'デスク作成', new_desk_path, class: "text-gray-600 hover:text-blue-500 transition" %>
         <%= link_to 'ログアウト', logout_path, class: "text-gray-600 hover:text-blue-500 transition", data: { turbo_method: :delete }  %>
     </div>
 </header>
