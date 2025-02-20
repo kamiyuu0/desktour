@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#top"
   get 'logon', to: 'static_pages#logon'
   resources :users, only: %i[new create]
+  resources :desks
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'

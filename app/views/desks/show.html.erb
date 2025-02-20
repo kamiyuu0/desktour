@@ -1,0 +1,13 @@
+<%= image_tag "desk_plaseholder.png", class: "card-img-top", width: "300", height:"200" %>
+
+<%= @desk.title %>
+<%= "by #{@desk.user.first_name}" %>
+<%= l @desk.created_at, format: :long %>
+<% if current_user.own?(@desk) %>
+  <%= link_to edit_desk_path(@desk), id: "button-edit-#{@desk.id}", class: "text-gray-600 hover:text-blue-500 transition" do %>
+    編集
+  <% end %>
+  <%= link_to desk_path(@desk), id: "button-delete-#{@desk.id}", data: { turbo_method: :delete, turbo_confirm: '削除しますか？' }, class: "text-red-600 hover:text-red-800 transition" do %>
+    削除
+  <% end %>
+<% end %>

@@ -1,0 +1,32 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div id="desk-id-<%= desk.id %>" class="bg-white rounded-lg shadow-lg overflow-hidden">
+    <%= image_tag "desk_plaseholder.png", class: "w-[300px] h-[200px] object-cover", width: "300", height: "200" %>
+    <div class="p-4">
+      <div class="flex items-center justify-between">
+        <h4 class="text-xl font-bold text-gray-800">
+          <%= link_to desk.title, desk_path(desk), class: "hover:text-blue-500 transition" %>
+        </h4>
+        <% if current_user.own?(desk) %>
+          <div class='flex space-x-2'>
+            <%= link_to edit_desk_path(desk), id: "button-edit-#{desk.id}", class: "text-gray-600 hover:text-blue-500 transition" do %>
+              編集
+            <% end %>
+            <%= link_to desk_path(desk), id: "button-delete-#{desk.id}", data: { turbo_method: :delete, turbo_confirm: '削除しますか？' }, class: "text-red-600 hover:text-red-800 transition" do %>
+              削除
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <ul class="text-gray-600 text-sm flex space-x-4 mt-2">
+        <li class="flex items-center space-x-1">
+          <i class="bi bi-person"></i>
+          <span><%= desk.user.first_name %></span>
+        </li>
+        <li class="flex items-center space-x-1">
+          <i class="bi bi-calendar"></i>
+          <span><%= l desk.created_at, format: :short %></span>
+        </li>
+      </ul>
+      <p class="text-gray-700 mt-3"><%= desk.content %></p>
+    </div>
+  </div>
