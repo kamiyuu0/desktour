@@ -44,6 +44,6 @@ class DesksController < ApplicationController
   private
 
   def desk_params
-    params.require(:desk).permit(:title, :content)
+    params.require(:desk).permit(:title, :content, :desk_image, :desk_image_cache)
   end
 end

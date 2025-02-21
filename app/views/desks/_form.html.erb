@@ -8,5 +8,10 @@
     <%= f.label :content %>
     <%= f.text_area :content, class: "form-control", rows: "10" %>
   </div>
+  <div class="mb-3">
+    <%= f.label :desk_image %>
+    <%= f.file_field :desk_image, accept: 'image/*' %>
+    <%= f.hidden_field :desk_image_cache %>
+  </div>
   <%= f.submit nil, class: "btn btn-primary" %>
 <% end %>

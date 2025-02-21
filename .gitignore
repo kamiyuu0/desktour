@@ -38,3 +38,6 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# 画像ファイルを除外
+/public/uploads/desk/desk_image/*

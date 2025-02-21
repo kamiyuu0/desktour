@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
   <div id="desk-id-<%= desk.id %>" class="bg-white rounded-lg shadow-lg overflow-hidden">
-    <%= image_tag "desk_plaseholder.png", class: "w-[300px] h-[200px] object-cover", width: "300", height: "200" %>
+    <%= image_tag desk.desk_image.url , class: "w-[300px] h-[200px] object-cover", width: "300", height: "200" %>
     <div class="p-4">
       <div class="flex items-center justify-between">
         <h4 class="text-xl font-bold text-gray-800">
