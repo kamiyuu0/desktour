@@ -11,6 +11,10 @@
         <%= image_tag @desk.neo_url,class: "w-full rounded-lg shadow-md", width: "300", height: "200" %>
     </div>
 
+    <p class="text-gray-700 leading-relaxed line-clamp-3">
+      <%= simple_format(@desk.content) %>
+    </p>
+
     <% if current_user.own?(@desk) %>
       <div class="flex space-x-4 mt-6">
         <%= link_to edit_desk_path(@desk), id: "button-edit-#{@desk.id}", class: "px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition" do %>
