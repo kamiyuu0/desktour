@@ -7,12 +7,8 @@
         <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">ユーザー登録</h1>
         <%= form_with model: @user, class: "space-y-6" do |f| %>
             <div>
-                <%= f.label :last_name, class: "block text-gray-700 font-medium" %>
-                <%= f.text_field :last_name, class: "w-full px-4 py-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
-            </div>
-            <div>
-                <%= f.label :first_name, class: "block text-gray-700 font-medium" %>
-                <%= f.text_field :first_name, class: "w-full px-4 py-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+                <%= f.label :nickname, class: "block text-gray-700 font-medium" %>
+                <%= f.text_field :nickname, class: "w-full px-4 py-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
             </div>
             <div>
                 <%= f.label :email, class: "block text-gray-700 font-medium" %>

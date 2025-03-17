@@ -2,8 +2,7 @@ ja:
   activerecord:
     attributes:
       user:
-        first_name: 性
-        last_name: 名
+        nickname: ニックネーム
         password: パスワード
         password_confirmation: パスワード確認
         email: メールアドレス

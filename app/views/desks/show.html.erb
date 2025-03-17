@@ -1,6 +1,6 @@
 <div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-lg space-y-6">
     <div>
-        <p class="text-sm text-gray-500">作成者: <span class="font-medium text-gray-700"><%= "#{@desk.user.first_name}" %></span></p>
+        <p class="text-sm text-gray-500">作成者: <span class="font-medium text-gray-700"><%= "#{@desk.user.nickname}" %></span></p>
         <p class="text-sm text-gray-500">作成日: <span class="font-medium text-gray-700"><%= l @desk.created_at, format: :long %></span></p>
     </div>
 
