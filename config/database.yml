@@ -5,7 +5,10 @@ default: &default
 
 development:
   <<: *default
-  url: <%= Rails.application.credentials.dig(:database_url) %>
+  database: 'app_test'
+  host: 'db'
+  username: 'postgres'
+  password: 'password'
 
 test:
   <<: *default

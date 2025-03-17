@@ -1,17 +1,17 @@
-<%= form_with model: desk do |f| %>
+<%= form_with class: "space-y-6 max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-lg" , model: desk do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="mb-3">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+  <div>
+    <%= f.label :title, class: "block text-sm font-medium text-gray-700" %>
+    <%= f.text_field :title, class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
   </div>
-  <div class="mb-3">
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "form-control", rows: "10" %>
+  <div>
+    <%= f.label :content ,class: "block text-sm font-medium text-gray-700" %>
+    <%= f.text_area :content, class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500", rows: "10" %>
   </div>
-  <div class="mb-3">
-    <%= f.label :desk_image %>
-    <%= f.file_field :desk_image, accept: 'image/*' %>
+  <div>
+    <%= f.label :desk_image ,class: "block text-sm font-medium text-gray-700" %>
+    <%= f.file_field :desk_image, accept: 'image/*', class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white" %>
     <%= f.hidden_field :desk_image_cache %>
   </div>
-  <%= f.submit nil, class: "btn btn-primary" %>
+  <%= f.submit "投稿する", class: "w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition" %>
 <% end %>

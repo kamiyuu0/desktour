@@ -1,32 +1,29 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  <div id="desk-id-<%= desk.id %>" class="bg-white rounded-lg shadow-lg overflow-hidden">
-    <%= image_tag desk.desk_image.url , class: "w-[300px] h-[200px] object-cover", width: "300", height: "200" %>
-    <div class="p-4">
-      <div class="flex items-center justify-between">
-        <h4 class="text-xl font-bold text-gray-800">
-          <%= link_to desk.title, desk_path(desk), class: "hover:text-blue-500 transition" %>
-        </h4>
-        <% if current_user.own?(desk) %>
-          <div class='flex space-x-2'>
-            <%= link_to edit_desk_path(desk), id: "button-edit-#{desk.id}", class: "text-gray-600 hover:text-blue-500 transition" do %>
-              編集
-            <% end %>
-            <%= link_to desk_path(desk), id: "button-delete-#{desk.id}", data: { turbo_method: :delete, turbo_confirm: '削除しますか？' }, class: "text-red-600 hover:text-red-800 transition" do %>
-              削除
-            <% end %>
-          </div>
+<div class="bg-white p-6 rounded-2xl shadow-lg space-y-4">
+  <div id="desk-id-<%= desk.id %>">
+    <div>
+      <p class="text-sm text-gray-500">作成者: <span class="font-medium text-gray-700"><%= desk.user.first_name %></span></p>
+      <p class="text-sm text-gray-500">作成日: <span class="font-medium text-gray-700"><%= l desk.created_at, format: :short %></span></p>
+    </div>
+
+    <h2 class="text-xl font-semibold text-gray-900"><%= link_to desk.title, desk_path(desk) %></h2>
+
+    <p class="text-gray-700 leading-relaxed line-clamp-3">
+        <%= desk.content %>
+    </p>
+
+    <div>
+        <%= image_tag desk.neo_url , class: "w-full rounded-lg shadow-md" %>
+    </div>
+
+    <% if current_user.own?(desk) %>
+      <div class='flex space-x-4 mt-4'>
+        <%= link_to edit_desk_path(desk), id: "button-edit-#{desk.id}", class: "px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition" do %>
+          編集
+        <% end %>
+        <%= link_to desk_path(desk), id: "button-delete-#{desk.id}", data: { turbo_method: :delete, turbo_confirm: '削除しますか？' }, class: "px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition" do %>
+          削除
         <% end %>
       </div>
-      <ul class="text-gray-600 text-sm flex space-x-4 mt-2">
-        <li class="flex items-center space-x-1">
-          <i class="bi bi-person"></i>
-          <span><%= desk.user.first_name %></span>
-        </li>
-        <li class="flex items-center space-x-1">
-          <i class="bi bi-calendar"></i>
-          <span><%= l desk.created_at, format: :short %></span>
-        </li>
-      </ul>
-      <p class="text-gray-700 mt-3"><%= desk.content %></p>
-    </div>
+    <% end %>
   </div>
+</div>
